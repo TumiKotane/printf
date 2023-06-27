@@ -28,21 +28,15 @@ struct fmt
 	char fmt;
 	int (*fn)(va_list, char[], int, int, int, int);
 };
-<<<<<<< HEAD
 
-=======
->>>>>>> 039dc21bfc03916fc01c9f69628a65beb4b7b09e
 
 /**
  * typedef struct fmt fmt_t - Struct op
  * @fmt: The format.
  * @fm_t: The function associated.
  */
-<<<<<<< HEAD
-typedef struct fmt fmt_t
-=======
+
 typedef struct fmt fmt_t;
->>>>>>> 039dc21bfc03916fc01c9f69628a65beb4b7b09e
 
 int _printf(const char *format, ...);
 int handle_print(const char *fmt, int *i,
@@ -109,6 +103,7 @@ int width, int flags, char padd, char extra_c, int padd_start);
 int write_unsgnd(int is_negative, int ind,
 char buffer[],
 int flags, int width, int precision, int size);
+
 /*** UTILS ***/
 int is_printable(char);
 int append_hexa_code(char, char[], int);
