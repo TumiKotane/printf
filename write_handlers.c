@@ -88,7 +88,8 @@ int flags, int width, int precision, int size)
  *
  * Return: Number of printed chars.
  */
-int write_num(int ind, char buffer[], int flags, int width, int prec,
+int write_num(int ind, char buffer[],
+int flags, int width, int prec,
 int length, char padd, char extra_c)
 {
 	int i, padd_start = 1;
@@ -123,11 +124,14 @@ int length, char padd, char extra_c)
 
 	return (write(1, &buffer[1], i - 1) + write(1, &buffer[ind], length));
 	}
+<<<<<<< HEAD
+	else if (!(flags & F_MINUS) && padd == '0');
+=======
 	else if (!(flags & F_MINUS) && padd == '0')
+>>>>>>> 98dcca9ae6521d2b8128d2891bcb83e9cf0e2b0f
 	{
 	if (extra_c)
 	buffer[--padd_start] = extra_c;
-
 	return (write(1, &buffer[padd_start], i - padd_start) +
 	write(1, &buffer[ind], length - (1 - padd_start)));
 	}
