@@ -13,7 +13,7 @@
  * Return: Number of chars printed
  */
 int print_char(va_list types, char buffer[],
-int flags, int width, int precision, size_t)
+int flags, int width, int precision, size)
 {
 	char c = va_arg(types, int);
 
