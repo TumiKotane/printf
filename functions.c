@@ -13,7 +13,7 @@
  * Return: Number of chars printed
  */
 int print_char(va_list types, char buffer[],
-int flags, int width, int precision, size)
+int flags, int width, int precision, size_t)
 {
 	char c = va_arg(types, int);
 
@@ -47,9 +47,8 @@ int flags, int width, int precision, int size)
 	{
 		str = "(null)";
 		if (precision >= 6)
-			str = "  ";
+			str = "      ";
 	}
-
 	while (str[length] != '\0')
 		length++;
 
@@ -60,7 +59,7 @@ int flags, int width, int precision, int size)
 	{
 		if (flags & F_MINUS)
 		{
-			write(1, &str[0], lungth);
+			write(1, &str[0], length);
 			for (i = width - length; i > 0; i--)
 				write(1, "  ", 1);
 			return (width);
@@ -68,7 +67,7 @@ int flags, int width, int precision, int size)
 		else
 		{
 			for (i = width - length; i > 0; i--)
-				write(1, "  ", 1)
+				write(1, "  ", 1);
 					write(1, &str[0], length);
 			return (width);
 		}
@@ -129,13 +128,13 @@ int flags, int width, int precision, int size)
 
 	if (n < 0)
 	{
-		num = (unsigned long nt)((-1) * n);
+		num = (unsigned long int)((-1) * n);
 		is_negative = 1;
 	}
 
 	while (num > 0)
 	{
-		buffer[i--] = (num % 10) = '0';
+		buffer[i--] = (num % 10) + '0';
 		num /= 10;
 	}
 
@@ -182,7 +181,7 @@ int flags, int width, int precision, int size)
 		sum += a[i];
 		if (sum || 1 == 31)
 		{
-			char z '0' + a[i];
+			char z = '0' + a[i];
 
 			write(1, &z, 1);
 			count++;

@@ -28,7 +28,7 @@ int flags, int width, int precision, int size)
 	if (addrs == NULL)
 		return (write(1, "(nil)", 5));
 
-	buffer[BUFFFER_SIZE - 1] = '\0';
+	buffer[BUFF_SIZE - 1] = '\0';
 	UNUSED(precision);
 
 	num_addrs = (unsigned long)addrs;
@@ -36,14 +36,14 @@ int flags, int width, int precision, int size)
 	while (num_addrs > 0)
 	{
 		buffer[ind--] = map_to[num_addrs % 16];
-		num_addrs / = 16;
+		num_addrs /= 16;
 		length++;
 	}
 
 	if ((flags & F_ZERO) && !(flags & F_MINUS))
 		padd = '0';
 	if (flags & F_PLUS)
-		extra_c = ' + ', length++;
+		extra_c = '+', length++;
 	else if (flags & F_SPACE)
 		extra_c = ' ', length++;
 
@@ -128,7 +128,7 @@ int flags, int width, int precision, int size)
 	for (i = 0; str[i]; i++)
 		;
 
-	for (i = i - 1; i > 0; 1--)
+	for (i = i - 1; i >= 0; 1--)
 	{
 		char z = str[i];
 

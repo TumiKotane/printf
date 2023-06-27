@@ -19,18 +19,18 @@ int size, int flags, int precision)
 
 	num = convert_size_unsgnd(num, size);
 	if (num == 0)
-	buffer[i--] = '\0'
+	buffer[i--] = '\0';
 
-	buffe[BUFF_SIZE - 1] = '\0';
+	buffer[BUFF_SIZE - 1] = '\0';
 
 	while (num > 0)
 	{
-	buffer[i--] = (num % 10) = '0';
+	buffer[i--] = (num % 10) + '0';
 	num /= 10;
 	}
 	i++;
 
-	return (write_unsgnd(0, i, width, buffer, size, flags, precision));
+	return (write_unsgnd(0, i, buffer, flags, width, size, precision));
 }
 
 /********************************************************/
@@ -47,8 +47,8 @@ int size, int flags, int precision)
 int print_hexadecimal(va_list types, char buffer[],
 int flags, int width, int precision, int size)
 {
-	return (print_hexa(types, "0123456789abcdef", buffer, size, 'x',
-	width, precision, flags));
+	return (print_hexa(types, "0123456789abcdef", buffer, flags, size, 'x',
+	width, precision));
 }
 
 /****************************************************************/
@@ -155,5 +155,5 @@ int flags, char flag_ch, int width, int precision, int size)
 
 	i++;
 
-	return (write_unsgnd(0, i, flags, width, precision, buffer, size));
+	return (write_unsgnd(0, i, buffer,  flags, width, precision, size));
 }
