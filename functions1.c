@@ -25,7 +25,7 @@ int size, int flags, int precision)
 
 	while (num > 0)
 	{
-	buffer[i--] = (num % 10) = '0';
+	buffer[i--] = (num % 10) + '0';
 	num /= 10;
 	}
 	i++;
