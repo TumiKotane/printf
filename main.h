@@ -33,7 +33,7 @@ struct fmt
  * @fmt: The format.
  * @fm_t: The function associated.
  */
-typedef (struct fmt fmt_t);
+typedef struct fmt_t{} fmt;
 
 int _printf(const char *format, ...);
 int handle_print(const char *fmt, int *i,
