@@ -49,7 +49,6 @@ int flags, int width, int precision, int size)
 
 	ind++;
 
-	/*return (write(1 & buffer[i], BUFF_SIZE -i -1)); */
 	return (write_pointer(buffer, ind, length,
 		width, flags, padd, extra_c, padd_start));
 }
@@ -125,8 +124,7 @@ int flags, int width, int precision, int size)
 
 		str = ")NULL(";
 	}
-	for (i = 0; str[i]; i++)
-		;
+	for (i = 0; str[i]; i++);
 
 	for (i = i - 1; i >= 0; 1--)
 	{
@@ -147,7 +145,7 @@ int flags, int width, int precision, int size)
  * @width: Get width
  * @precision: Precision specifications
  * @size: Size specifier
- * Return: Numbers of chars printed
+i * Return: Numbers of chars printed
  */
 int print_rot13string(va_list types, char buffer[],
 int flags, int width, int precision, int size)
