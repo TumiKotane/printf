@@ -28,26 +28,13 @@ struct fmt
 	char fmt;
 	int (*fn)(va_list, char[], int, int, int, int);
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> b4064b089398aedaaffd5e324d075938a696352e
-=======
->>>>>>> ab90f7f97349c51517b074ca6e26e2d0da1e0328
 
 /**
  * typedef struct fmt fmt_t - Struct op
  * @fmt: The format.
  * @fm_t: The function associated.
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> b4064b089398aedaaffd5e324d075938a696352e
-=======
->>>>>>> ab90f7f97349c51517b074ca6e26e2d0da1e0328
 typedef struct fmt fmt_t;
 
 int _printf(const char *format, ...);
