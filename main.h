@@ -1,5 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
+#ifndef _FUNCTION_LIKE_MACRO_H
+#define _FUNCTION_LIKE_MACRO_H
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
